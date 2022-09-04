@@ -11,8 +11,8 @@ node {
 
 	stage ('Run script') {
 		app.inside {
-			export python_secret='python-secret-text'
-			echo $python_secret
+			sh "export python_secret='python-secret-text'"
+			sh "echo $python_secret"
 			sh 'python -V'
 			sh 'python main.py'
 		}
